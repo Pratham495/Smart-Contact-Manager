@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" xmlns:th="http://www.thymleaf.org" >
+<title>Insert title here</title>
+</head>
+<body th:replace="normal/base::layout(~{::section})">
+<section>
+
+<div class="card mr-3 ml-3">
+
+<div class="card-body" th:if="${contact}">
+
+<div class="container text-center">
+
+<img src="" style="height:200px; width:200px" class="my_profile_pictures" th:src="@{'/img/'+${contact.image}}" alt="" />
+
+<h2 class="mt-3"><span th:text="${contact.name}"></span>(<span th:text="${contact.secondname}"></span>)</h2>
+
+</div>
+
+</div>
+</div>
+<h1  class="text-center p-3 bg-danger text-white mr-3"  th:unless="${contact}">You Don't have permission to see this contact</h1>
+
+</section>
+</body>
+</html>
+
+
